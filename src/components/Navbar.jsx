@@ -8,7 +8,8 @@ const Navbar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Typography variant="h6">Material Site</Typography>;
+        <Typography variant="h6">Ade's Site</Typography>;
+        <Typography variant="h6">ADE</Typography>;
       </Toolbar>
     </AppBar>
   );
