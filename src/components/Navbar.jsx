@@ -37,12 +37,25 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
     borderRadius: theme.shape.borderRadius,
     width: "40%",
   },
   input: {
     color: "white",
     marginLeft: theme.spacing(1),
+  },
+  searchButton: {
+    marginRight: theme.spacing(2),
+  },
+  icon: {
+    display: "flex",
+    alignItems: "center",
+  },
+  badge: {
+    marginRight: theme.spacing(2),
   },
 }));
 
@@ -62,10 +75,11 @@ const Navbar = () => {
           <InputBase placeholder="Search..." className={classes.input} />
         </div>
         <div className={classes.icon}>
-          <Badge color="secondary" badgeContent={4}>
+          <SearchIcon className={classes.searchButton} />
+          <Badge color="secondary" badgeContent={4} className={classes.badge}>
             <MailIcon />
           </Badge>
-          <Badge color="secondary" badgeContent={4}>
+          <Badge color="secondary" badgeContent={4} className={classes.badge}>
             <NotificationsIcon />
           </Badge>
           <Avatar alt="Remy Sharp" src="https://ibb.co/4P0v9jZ" />
