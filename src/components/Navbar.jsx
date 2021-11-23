@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import {
   alpha,
   AppBar,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+      display: (props) => (props.open ? "flex" : "none"),
     },
     borderRadius: theme.shape.borderRadius,
     width: "40%",
@@ -49,10 +49,13 @@ const useStyles = makeStyles((theme) => ({
   },
   searchButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   icon: {
-    display: "flex",
     alignItems: "center",
+    display: (props) => (props.open ? "none" : "flex"),
   },
   badge: {
     marginRight: theme.spacing(2),
@@ -60,7 +63,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = () => {
-  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const classes = useStyles({ open });
   return (
     <AppBar>
       <Toolbar className={classes.toolBar}>
@@ -75,7 +80,10 @@ const Navbar = () => {
           <InputBase placeholder="Search..." className={classes.input} />
         </div>
         <div className={classes.icon}>
-          <SearchIcon className={classes.searchButton} />
+          <SearchIcon
+            className={classes.searchButton}
+            onClick={() => setOpen(true)}
+          />
           <Badge color="secondary" badgeContent={4} className={classes.badge}>
             <MailIcon />
           </Badge>
