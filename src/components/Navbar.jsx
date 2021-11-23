@@ -12,6 +12,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const useStyles = makeStyles((theme) => ({
   toolBar: {
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       display: (props) => (props.open ? "flex" : "none"),
+      width: "70%",
     },
     borderRadius: theme.shape.borderRadius,
     width: "40%",
@@ -46,6 +48,11 @@ const useStyles = makeStyles((theme) => ({
   input: {
     color: "white",
     marginLeft: theme.spacing(1),
+  },
+  cancel: {
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   searchButton: {
     marginRight: theme.spacing(2),
@@ -78,6 +85,10 @@ const Navbar = () => {
         <div className={classes.search}>
           <SearchIcon />
           <InputBase placeholder="Search..." className={classes.input} />
+          <CancelIcon
+            className={classes.cancel}
+            onClick={() => setOpen(false)}
+          />
         </div>
         <div className={classes.icon}>
           <SearchIcon
