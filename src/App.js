@@ -1,8 +1,9 @@
 import "./App.css";
-import { makeStyles } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import Navbar from "./components/Navbar";
-import { theme } from "./theme";
 import Leftbar from "./components/Leftbar";
+import Feeds from "./components/Feeds";
+import Rightbar from "./components/Rightbar";
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -11,7 +12,17 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Leftbar />
+      <Grid container>
+        <Grid item sm={2}>
+          <Leftbar />
+        </Grid>
+        <Grid item sm={7}>
+          <Feeds />
+        </Grid>
+        <Grid item sm={3}>
+          <Rightbar />
+        </Grid>
+      </Grid>
     </div>
   );
 }
