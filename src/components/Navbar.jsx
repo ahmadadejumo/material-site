@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoSm: {
     display: "block",
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up("sm")]: {
       display: "none",
     },
   },
@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+    borderRadius: theme.shape.borderRadius,
+    width: "50%",
     [theme.breakpoints.down("sm")]: {
       display: (props) => (props.open ? "flex" : "none"),
       width: "70%",
     },
-    borderRadius: theme.shape.borderRadius,
-    width: "40%",
   },
   input: {
     color: "white",
@@ -55,12 +55,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   searchButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(),
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
   },
-  icon: {
+  icons: {
     alignItems: "center",
     display: (props) => (props.open ? "none" : "flex"),
   },
@@ -90,7 +90,7 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
           />
         </div>
-        <div className={classes.icon}>
+        <div className={classes.icons}>
           <SearchIcon
             className={classes.searchButton}
             onClick={() => setOpen(true)}
