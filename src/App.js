@@ -1,4 +1,5 @@
 import { Grid, makeStyles } from "@material-ui/core";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Leftbar from "./components/Leftbar";
 import Feeds from "./components/Feeds";
