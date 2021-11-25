@@ -1,4 +1,3 @@
-import "./App.css";
 import { Grid, makeStyles } from "@material-ui/core";
 import Navbar from "./components/Navbar";
 import Leftbar from "./components/Leftbar";
