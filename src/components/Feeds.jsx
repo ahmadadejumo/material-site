@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({}));
 
 const Feeds = () => {
   const classes = useStyles();
-  return <div></div>;
+  return <div>Feeds</div>;
 };
 
 export default Feeds;
