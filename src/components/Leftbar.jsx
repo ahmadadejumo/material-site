@@ -4,7 +4,15 @@ import HomeIcon from "@mui/icons-material/Home";
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    height: "100vh",
+    color: "white",
     paddingTop: theme.spacing(10),
+    background: theme.palette.primary.main,
+    [theme.breakpoints.up("sm")]: {
+      background: "white",
+      color: "grey",
+      border: "1px solid #ece7e7",
+    },
   },
   item: {
     display: "flex",
@@ -13,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       marginBottom: theme.spacing(3),
       cursor: "pointer",
+    },
+  },
+  text: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
   },
 }));
