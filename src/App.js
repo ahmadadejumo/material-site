@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Leftbar from "./components/Leftbar";
 import Feeds from "./components/Feeds";
 import Rightbar from "./components/Rightbar";
+import Add from "./components/Add";
 
 const useStyles = makeStyles((theme) => ({
   right: {
@@ -29,6 +30,7 @@ function App() {
           <Rightbar />
         </Grid>
       </Grid>
+      <Add />
     </div>
   );
 }
