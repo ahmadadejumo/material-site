@@ -54,6 +54,19 @@ const Feeds = () => {
                 style={{ width: "100%" }}
               />
             </div>
+            <div className={classes.item}>
+              <TextField
+                id="standard-multiline-static"
+                label="Description"
+                multiline
+                rows={4}
+                defaultValue="Tell your story..."
+                variant="standard"
+                size="small"
+                style={{ width: "100%" }}
+              />
+            </div>
+            <div className={classes.item}></div>
           </form>
         </Container>
       </Modal>
