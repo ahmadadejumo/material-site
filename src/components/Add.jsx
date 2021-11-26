@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import {
+  Button,
   Container,
   Fab,
   FormControlLabel,
@@ -103,6 +104,22 @@ const Feeds = () => {
                   label="Custom(Premium)"
                 />
               </RadioGroup>
+            </div>
+            <div className={classes.item}>
+              <Button
+                variant="outlined"
+                color="primary"
+                style={{ marginRight: 20 }}
+              >
+                Create
+              </Button>
+              <Button
+                variant="outlined"
+                color="Secondary"
+                onClick={() => setOpen(false)}
+              >
+                Cancel
+              </Button>
             </div>
           </form>
         </Container>
