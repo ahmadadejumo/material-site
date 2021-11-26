@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
       height: "100vh",
     },
   },
+  form: {
+    padding: theme.spacing(2),
+  },
+  item: {
+    marginBottom: theme.spacing(3),
+  },
 }));
 
 const Feeds = () => {
