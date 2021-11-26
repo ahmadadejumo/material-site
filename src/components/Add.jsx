@@ -10,10 +10,12 @@ import {
   Modal,
   Radio,
   RadioGroup,
+  Snackbar,
   TextField,
   Tooltip,
 } from "@material-ui/core";
 import AddIcon from "@mui/icons-material/Add";
+import MuiAlert from "@mui/material/Alert";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -44,8 +46,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Alert = function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+};
+
 const Feeds = () => {
   const [open, setOpen] = useState(false);
+  const [openAlert, setOpenAlert] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenAlert(false);
+  };
   const classes = useStyles();
   return (
     <>
@@ -116,6 +131,7 @@ const Feeds = () => {
                 variant="outlined"
                 color="primary"
                 style={{ marginRight: 20 }}
+                onClick={() => setOpenAlert(true)}
               >
                 Create
               </Button>
@@ -130,6 +146,16 @@ const Feeds = () => {
           </form>
         </Container>
       </Modal>
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={2000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+      >
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          This is a success message!
+        </Alert>
+      </Snackbar>
     </>
   );
 };
