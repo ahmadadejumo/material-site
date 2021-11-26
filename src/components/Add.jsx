@@ -1,5 +1,12 @@
 import { React, useState } from "react";
-import { Container, Fab, makeStyles, Modal, Tooltip } from "@material-ui/core";
+import {
+  Container,
+  Fab,
+  makeStyles,
+  Modal,
+  TextField,
+  Tooltip,
+} from "@material-ui/core";
 import AddIcon from "@mui/icons-material/Add";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     left: 0,
     right: 0,
-    margin: "auto"
+    margin: "auto",
+    [theme.breakpoints.down("sm")]: {
+      width: "100vw",
+      height: "100vh",
+    },
   },
 }));
 
@@ -32,7 +43,19 @@ const Feeds = () => {
         </Fab>
       </Tooltip>
       <Modal open={open}>
-        <Container className={classes.container}>My Modal</Container>
+        <Container className={classes.container}>
+          <form className={classes.form}>
+            <div className={classes.item}>
+              <TextField
+                id="standard-basic"
+                label="Title"
+                variant="standard"
+                size="small"
+                style={{ width: "100%" }}
+              />
+            </div>
+          </form>
+        </Container>
       </Modal>
     </>
   );
