@@ -2,8 +2,13 @@ import { React, useState } from "react";
 import {
   Container,
   Fab,
+  FormControlLabel,
+  FormLabel,
   makeStyles,
+  MenuItem,
   Modal,
+  Radio,
+  RadioGroup,
   TextField,
   Tooltip,
 } from "@material-ui/core";
@@ -66,7 +71,39 @@ const Feeds = () => {
                 style={{ width: "100%" }}
               />
             </div>
-            <div className={classes.item}></div>
+            <div className={classes.item}>
+              <TextField select label="Visibility" value="Public">
+                <MenuItem value="Public">Public</MenuItem>
+                <MenuItem value="Private">Private</MenuItem>
+                <MenuItem value="Unlisted">Unlisted</MenuItem>
+              </TextField>
+            </div>
+            <div className={classes.item}>
+              <FormLabel component="legend">Who can comment?</FormLabel>{" "}
+              <RadioGroup>
+                <FormControlLabel
+                  value="everybody"
+                  control={<Radio size="small" />}
+                  label="Everybody"
+                />
+                <FormControlLabel
+                  value="My friends"
+                  control={<Radio size="small" />}
+                  label="My friends"
+                />
+                <FormControlLabel
+                  value="nobody"
+                  control={<Radio size="small" />}
+                  label="Nobody"
+                />
+                <FormControlLabel
+                  value="Custom"
+                  disabled
+                  control={<Radio size="small" />}
+                  label="Custom(Premium)"
+                />
+              </RadioGroup>
+            </div>
           </form>
         </Container>
       </Modal>
