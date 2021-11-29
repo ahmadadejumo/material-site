@@ -4,6 +4,8 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Link from "@mui/material/Link";
+import Divider from "@mui/material/Divider";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -14,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     color: "#555",
     textAlign: "center",
+  },
+  link: {
+    paddingRight: theme.spacing(2),
+    color: "#555",
+    fontSize: 16,
   },
 }));
 
@@ -120,6 +127,28 @@ const Rightbar = () => {
           </ImageListItem>
         ))}
       </ImageList>
+      <Typography className={classes.title} gutterBottom>
+        Categories
+      </Typography>
+      <Link href="#" className={classes.link} variant="body2">
+        Sport
+      </Link>
+      <Link href="#" className={classes.link} variant="body2">
+        Food
+      </Link>
+      <Link href="#" className={classes.link} variant="body2">
+        Music
+      </Link>
+      <Divider flexItem style={{ marginBottom: 5 }} />
+      <Link href="#" className={classes.link} variant="body2">
+        Movies
+      </Link>
+      <Link href="#" className={classes.link} variant="body2">
+        Science
+      </Link>
+      <Link href="#" className={classes.link} variant="body2">
+        Life
+      </Link>
     </Container>
   );
 };
