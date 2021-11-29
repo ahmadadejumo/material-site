@@ -7,14 +7,22 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(10),
   },
+  title: {
+    fontSize: 16,
+    fontWeight: 500,
+    color: "#555",
+    textAlign: "center",
+  },
 }));
 
 const Rightbar = () => {
   const classes = useStyles();
   return (
     <Container className={classes.container}>
-      <Typography>Online friends</Typography>
-      <AvatarGroup max={4}>
+      <Typography className={classes.title} gutterBottom>
+        Online friends
+      </Typography>
+      <AvatarGroup max={6}>
         <Avatar
           alt="Remy Sharp"
           src="https://material-ui.com/static/images/avatar/1.jpg"
@@ -34,6 +42,14 @@ const Rightbar = () => {
         <Avatar
           alt="Trevor Henderson"
           src="https://material-ui.com/static/images/avatar/5.jpg"
+        />
+        <Avatar
+          alt="Trevor Henderson"
+          src="https://material-ui.com/static/images/avatar/6.jpg"
+        />
+        <Avatar
+          alt="Trevor Henderson"
+          src="https://material-ui.com/static/images/avatar/7.jpg"
         />
       </AvatarGroup>
     </Container>
